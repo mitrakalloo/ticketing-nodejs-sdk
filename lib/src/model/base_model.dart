@@ -17,6 +17,9 @@ class BaseModel implements Base {
 
   BaseModel(this._self, this._apiAdapter);
 
+  // Protected getter for subclasses to access the API adapter
+  APIAdapter get apiAdapter => _apiAdapter;
+
   @override
   String get id {
     final match = RegExp(r'([A-Za-z0-9\-]+)$').firstMatch(_self);

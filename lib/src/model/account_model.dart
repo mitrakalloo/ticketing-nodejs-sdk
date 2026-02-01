@@ -64,9 +64,9 @@ class AccountModel extends BaseModel {
         super(data['self'] as String, adapter);
 
   Future<AccountPreferencesModel> get preferences async {
-    final response = await _apiAdapter.get(_preferencesUri);
+    final response = await apiAdapter.get(_preferencesUri);
     final data = jsonDecode(response.body) as Map<String, dynamic>;
-    return AccountPreferencesModel(_preferencesUri, data, _apiAdapter);
+    return AccountPreferencesModel(_preferencesUri, data, apiAdapter);
   }
 
   @override
