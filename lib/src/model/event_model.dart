@@ -57,7 +57,7 @@ class EventModel extends BaseModel {
 
   Future<bool> submit() async {
     try {
-      await _apiAdapter.post('$uri/submissions', {});
+      await apiAdapter.post('$uri/submissions', {});
       return true;
     } catch (e) {
       rethrow;
@@ -66,7 +66,7 @@ class EventModel extends BaseModel {
 
   Future<bool> cancel() async {
     try {
-      await _apiAdapter.post('$uri/cancellations', {});
+      await apiAdapter.post('$uri/cancellations', {});
       return true;
     } catch (e) {
       rethrow;
